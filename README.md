@@ -1,70 +1,81 @@
-# Getting Started with Create React App
+React GUID TO RUN
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+=========================================================================================	
+https://www.youtube.com/watch?v=7va799ctfWQ&list=PLvvtf05eMZ2DpDyWwmAjEuicvVxx4vIYB
 
-## Available Scripts
+1) setup
+		Node-JS | visualStudio CODE
+		ES7 install--> react/redux/react-native/ js Snippets
+		Meteriakl icon Theam - make buaty
+		Prettier - code syndex
+2) folder structure
+		node-modules/*   ( npm install) load this dependency
+		public/*
+		src/*
+		package.json     (node-modules version details avaliable hear)
+		
+		src/1) index.js   --> document.getElementById('root') ==> public/index.html (single page application - all rendering hear) [Render- valankuthal]
+			2) App.js
+				
+3) react component
+     index.js-> app.js -> HitachiModuleK.jsx -> HitachiModuleKItems.jsx (can reuse this module)
+	 
+4) PROPS -> reuse component with dynamic change value (element pass)
+		Add chrome extenction: React Developer Tools  [ DeveloperTool-> component]
+		
+5) List showing  
+		5.1) (https://randomuser.me/) - random user detail from web
+		5.2) npm install moment - date format libeary
+		5.3) looping responce array (show user list) , with unic KEY (view user)
+		
+6) Styling component (css)
+		6.1) import css file style (use xxx.css) <p className='redText'>
+		6.2) inline style  <p style={{color: 'green'}} >
+		6.3) bootstrap     ==> add bootstrape lib to [index.html] (root file)  [https://getbootstrap.com/docs/5.2/components/dropdowns/]
+				- headder + moduleK + module items design
+		6.4) bootstrap react (meterial-ui) component
+		
+7) React Hooks 
+		import React,{useState} from 'react' 
+		react hook= without component refresh(browser refresh=rerunder brouser) , only state updated (when add button)
+		setNameList(nameList => nameList.concat(newUser));  -----> add newUser to nameList
+		
+8) react Hooks
+		import React,{useState, useEffect} from 'react';
+		https://randomuser.me/api   ==> user view from url ,when button click
+		useEffect --> loading when refresh page 
+		
+9) Routing
+		- single page routing ( can not refresh page -> need to replace data and show)  Good: https://reactrouter.com/docs/en/v6/getting-started/tutorial
+		Header Bar =>>> [Home | Abour | ShowUserLiust] [routing Add]
+		
+		npm install react-router-dom@6
+		import { BrowserRouter,Routes, Route } from "react-router-dom";
+		import { Link } from "react-router-dom";
+		
+		
+==============================================================================================
+git 
+Git-2.36.1-64-bit
+Creact repository get url{https://github.com/kreshan882/ReactJS_2022.git}
+1) git Gui
+	>[git config --global user.email "kreshan882@gmail.com"]
+	clone exesit repository [ URL  +  LocalPath/newFolder + clone]
+	git clone url
+	
+	================================
+	upload Git BAST commant font
+	================================
+	git config --global user.email "kreshan882@gmail.com"
+	cd ReactJS_2022/
+	git init
+	git add src/* (git add --all)
+	git status  ==> check status 
+	git commit -m "commit fst"
+	git log
+	git push https://github.com/kreshan882/ReactJS_202206.git
 
-In the project directory, you can run:
 
-### `npm start`
+https://www.youtube.com/watch?v=RoQskA11yaM&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1) What is a Class Component / functional component
