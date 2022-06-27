@@ -16,7 +16,9 @@ function HeaderBar(){
                 <li className="nav-item">
                     <Link  className="nav-link" to="/" >ShowNameList</Link >
                 </li>
-           
+                <li className="nav-item">
+                    <Link  className="nav-link" to="/NameListCls" >NameList_Class</Link >
+                </li>
            </ul>
            
         </nav>

@@ -5,6 +5,8 @@ import HitachiModuleK from './comp/pages/nameList/HitachiModuleK';
 import HeaderBar from './comp/pages/headerBar/HeaderBar';
 import Home from './comp/pages/Home/Home';
 import About from './comp/pages/About/About';
+import NameListCls from './comp/pages/nameListCls/NameListCls';
+
 
 
 
@@ -22,6 +24,7 @@ function App() {
     <HeaderBar />
     <Routes>
       <Route path="/" element={<HitachiModuleK />} />
+      <Route path="/NameListCls" element={<NameListCls/>} />
       <Route path="home" element={<Home />} />
       <Route path="about" element={<About />} />
     </Routes>
