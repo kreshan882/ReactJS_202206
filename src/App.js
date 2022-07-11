@@ -6,6 +6,8 @@ import HeaderBar from './comp/pages/headerBar/HeaderBar';
 import Home from './comp/pages/Home/Home';
 import About from './comp/pages/About/About';
 import NameListCls from './comp/pages/nameListCls/NameListCls';
+import AddNewUser from './comp/pages/UserManagement/AddNewUser';
+import AddNewUserClass from './comp/pages/UserManagement/AddNewUserClass';
 
 
 
@@ -27,6 +29,8 @@ function App() {
       <Route path="/NameListCls" element={<NameListCls/>} />
       <Route path="home" element={<Home />} />
       <Route path="about" element={<About />} />
+      <Route path="addNewUser" element={<AddNewUser />} />
+      <Route path="addNewUserClass" element={<AddNewUserClass />} />
     </Routes>
     </BrowserRouter>
   </React.Fragment>

@@ -19,6 +19,12 @@ function HeaderBar(){
                 <li className="nav-item">
                     <Link  className="nav-link" to="/NameListCls" >NameList_Class</Link >
                 </li>
+                <li className="nav-item">
+                    <Link  className="nav-link" to="/addNewUser" >AddNewUser</Link >
+                </li>
+                <li className="nav-item">
+                    <Link  className="nav-link" to="/addNewUserClass" >AddNewUserClass</Link >
+                </li>
            </ul>
            
         </nav>
