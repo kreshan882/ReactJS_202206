@@ -3,6 +3,7 @@ import HitachiModuleKItems from '../nameList/HitachiModuleKItems';
 
 
 class NameListCls extends Component {
+    //1 ,5
     constructor(){
         super();
         console.log('call constractor');
@@ -28,6 +29,7 @@ class NameListCls extends Component {
 
     }
 
+    //2 Lifecircle Method, can call url
     componentDidMount(){
         console.log('call componentDidMount');
         fetch('https://randomuser.me/api').then((response) => {
@@ -42,6 +44,7 @@ class NameListCls extends Component {
 
     }
 
+    //6 Lifecircle Method, can call url
     componentDidUpdate(){
         console.log('call componentDidUpdate');  
         if(this.state.getAName) {  // to stop loop
@@ -59,7 +62,8 @@ class NameListCls extends Component {
         }
         
     }
-
+    
+    //4
     addNameHandeler = () => {
         console.log('call addNameHandeler'); 
         console.log(this.state.getAName); // this - need to changed to arrow function  
@@ -67,6 +71,7 @@ class NameListCls extends Component {
         //this.setState({message:"butt to update"}); // call componentDidUpdate
     }
 
+    //7
     nameListComp = () => {
         return this.state.nameList.map((aName) => {
           return (
@@ -81,6 +86,7 @@ class NameListCls extends Component {
         });
       };
 
+    //3
     render() {
         return (
             <div className='container mt-4'>

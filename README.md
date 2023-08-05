@@ -3,7 +3,12 @@ React GUID TO RUN
 =========================================================================================	
 https://www.youtube.com/watch?v=7va799ctfWQ&list=PLvvtf05eMZ2DpDyWwmAjEuicvVxx4vIYB
 
+https://www.youtube.com/watch?v=RoQskA11yaM&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o
+
+https://www.youtube.com/watch?v=FbxE0Qw2500&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o&index=2
+
 *****[Single page Application: when click button , not recomendet to refresh and load]  ******
+.jsx file ===> Js+Xml
 1.1) setup
 		Instaill Node-JS 
 		install visualStudio CODE
@@ -93,8 +98,32 @@ https://www.youtube.com/watch?v=7va799ctfWQ&list=PLvvtf05eMZ2DpDyWwmAjEuicvVxx4v
 	import { link } from "react-router-dom";                          ---> HeaderBar
 
 
-10)		
-		
+https://www.youtube.com/watch?v=RoQskA11yaM&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o
+
+10) What is a Class Component / functional component  (State using style different but same think will do) 
+									
+		Function Compl   return ();   		
+						 import React,{useState, useEffect}  =======> using reace Hooks
+						 const [nameList,setNameList]=useState();
+						 {probs.msg}   ---> function namelist(probs){}
+						 
+		Class Component     render() { return (); }
+						    import React, { Component } 
+						    this.state= { .......}          ========> using reace Hooks
+							{this.probs.msg}
+							
+							constructor(){ super(); ....} ---> initial mount time loaded
+							render() { return (.....)}
+							componentDidMount(){ .......}  ---> initial mount time loaded                ==>[Lifecircle Method]
+							componentDidUpdate(){ ......}  ---> only loaded , when update the setState() ==>[Lifecircle Method]
+							
+							addNameHandeler = () => {....)  ---> arrow finction used to retrive this.stater.message
+							render() { return (); }
+
+
+https://www.youtube.com/watch?v=FbxE0Qw2500&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o&index=2
+
+11) 
 ==============================================================================================
 git 
 Git-2.36.1-64-bit
@@ -117,6 +146,3 @@ Creact repository get url{https://github.com/kreshan882/ReactJS_2022.git}
 	git push https://github.com/kreshan882/ReactJS_202206.git
 
 
-https://www.youtube.com/watch?v=RoQskA11yaM&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o
-
-1) What is a Class Component / functional component
