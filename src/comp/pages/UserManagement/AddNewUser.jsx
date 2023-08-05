@@ -6,6 +6,7 @@ import axios from 'axios';
 function AddNewUser() {
 
   const [message,setMessage] = useState('');
+  
   const initialValues= {
     title:'mr',
     description:'',
@@ -18,7 +19,7 @@ function AddNewUser() {
     
     const apiUrl="https//addUser/restApi";
     const task ={id: '4',title: values.title ,description:values.description };
-    axios.put(apiUrl,task)
+    axios.post(apiUrl,task)
     .then((response) => {
         if(response.status==200){
 
@@ -57,24 +58,34 @@ function AddNewUser() {
         <div className="container col-sm-8 mt-4">
           <h4 className="mb-4">Add/Edit Task</h4>
           <form onSubmit={formik.handleSubmit}>
+        
         <div className="form-group">
           <label for="title">Title</label>
           <input type="text" className="form-control"  id="title"  aria-describedby="emailHelp"  
-          onChange={formik.handleChange} value={formik.values.title} onBlur={formik.handleBlur}/>
+            onChange={formik.handleChange} 
+            value={formik.values.title} 
+            onBlur={formik.handleBlur}/>
           {formik.touched.title && formik.errors.title? <div className="text-danger">{formik.errors.title}</div>: null}
         </div>
+        
         <div className="form-group">
           <label for="description">Description</label>
           <textarea rows="4" type="text" className="form-control" id="description" aria-describedby="emailHelp" 
-          onChange={formik.handleChange} value={formik.values.description} onBlur={formik.handleBlur} />
+            onChange={formik.handleChange} 
+            value={formik.values.description} 
+            onBlur={formik.handleBlur} />
           {formik.touched.description && formik.errors.description? <div className="text-danger">{formik.errors.description}</div>: null}
         </div>
+       
         <div className="form-group">
           <label for="dueDate">Due Date</label>
           <input type="text" className="form-control" id="dueDate"  aria-describedby="emailHelp" 
-          onChange={formik.handleChange} value={formik.values.dueDate} onBlur={formik.handleBlur}/>
+            onChange={formik.handleChange} 
+            value={formik.values.dueDate} 
+            onBlur={formik.handleBlur}/>
           {formik.touched.dueDate && formik.errors.dueDate? <div className="text-danger">{formik.errors.dueDate}</div>: null}
         </div>
+        
         <button type="submit" class="btn btn-primary">
           Submit
         </button>

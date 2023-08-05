@@ -1,5 +1,5 @@
 React GUID TO RUN
-
+Referance: https://github.com/fiqriismail/
 =========================================================================================	
 https://www.youtube.com/watch?v=7va799ctfWQ&list=PLvvtf05eMZ2DpDyWwmAjEuicvVxx4vIYB
 
@@ -123,7 +123,40 @@ https://www.youtube.com/watch?v=RoQskA11yaM&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljT
 
 https://www.youtube.com/watch?v=FbxE0Qw2500&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljTc5o&index=2
 
-11) 
+11)React Js useFormik | Firebase Backend Database/API    0.12/1.24
+	import { useFormik } from 'formik';
+	import axios from 'axios';
+		
+	11.1) ====> FireBaseDatabase Google [Video time: 0.13] 
+		** after Db created automaticaly rest web service given
+		https://console.firebase.google.com/?pli=1
+		 11.1.1) Create Project : ReactTaskManagerK-->create success->
+		 11.1.2) Build-> ReyalTime Databse-> Create Databse-> Start Test Mode| enable-> ->Publish
+					"rules": {
+						".read": true,  // 2023-9-4
+						".write": true,  // 2023-9-4
+					  }
+		
+		 11.1.3)  [get the databse URL] Build-> ReyalTime Databse->Data (copy url) 
+				https://reacttaskmanagerk-default-rtdb.asia-southeast1.firebasedatabase.app/
+				test this rest function with postman	
+				
+		 11.1.4) create table when calling to that url from POSTMAN
+				11.1.4.1) POST |Body|row|json --> create table and add data
+					https://reacttaskmanagerk-default-rtdb.asia-southeast1.firebasedatabase.app/tasksTable.json
+					{
+						"task_id":100,
+						"description": "testing desc",
+						"status":"New"
+					}
+				11.1.4.2) DELETE|GET -->delete|get data from the table using POSTMAN
+						https://reacttaskmanagerk-default-rtdb.asia-southeast1.firebasedatabase.app/tasksTable/(12345gygyu_generated_id).json
+						
+	11.2) React Js useFormik (all form validation and submition) [Video time: 0.22 - 0.34....] 
+			npm i formik
+			https://formik.org/docs/overview
+			
+ 
 ==============================================================================================
 git 
 Git-2.36.1-64-bit

@@ -7,7 +7,8 @@ import Home from './comp/pages/Home/Home';
 import About from './comp/pages/About/About';
 import NameListCls from './comp/pages/nameListCls/NameListCls';
 import AddNewUser from './comp/pages/UserManagement/AddNewUser';
-import AddNewUserClass from './comp/pages/UserManagement/AddNewUserClass';
+import TasksList from './comp/pages/TasksList/TasksList';
+
 
 
 
@@ -24,13 +25,16 @@ function App() {
     <React.Fragment>
     <BrowserRouter>
     <HeaderBar />
+    {/* <Switch></Switch> */}
     <Routes>
-      <Route path="/" element={<HitachiModuleK />} />
+      <Route path="/NameList_Func" element={<HitachiModuleK />} />
       <Route path="/NameListCls" element={<NameListCls/>} />
       <Route path="home" element={<Home />} />
       <Route path="about" element={<About />} />
-      <Route path="addNewUser" element={<AddNewUser />} />
-      <Route path="addNewUserClass" element={<AddNewUserClass />} />
+
+      <Route path="NewTask" element={<AddNewUser />} />
+      <Route path="TaskList" element={<TasksList />} />
+      {/* <Route path="/listtask" element={<TasksList />} /> */}
     </Routes>
     </BrowserRouter>
   </React.Fragment>

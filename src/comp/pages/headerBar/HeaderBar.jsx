@@ -14,16 +14,16 @@ function HeaderBar(){
                     <Link  className="nav-link" to="/about" >About</Link >
                 </li>
                 <li className="nav-item">
-                    <Link  className="nav-link" to="/" >ShowNameList</Link >
+                    <Link  className="nav-link" to="/NameList_Func" >NameList_Funct</Link >
                 </li>
                 <li className="nav-item">
-                    <Link  className="nav-link" to="/NameListCls" >NameList_Class</Link >
+                    <Link  className="nav-link" to="/NameListCls" >NameList_Clsas</Link >
                 </li>
                 <li className="nav-item">
-                    <Link  className="nav-link" to="/addNewUser" >AddNewUser</Link >
+                    <Link  className="nav-link" to="/NewTask" >NewTaskForm</Link >
                 </li>
                 <li className="nav-item">
-                    <Link  className="nav-link" to="/addNewUserClass" >AddNewUserClass</Link >
+                    <Link  className="nav-link" to="/TaskList" >TaskList</Link >
                 </li>
            </ul>
            
