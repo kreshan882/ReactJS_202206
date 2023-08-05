@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import {v4 as uuid4} from 'uuid';
-
+import { Link } from "react-router-dom";
 
 function AddNewUser() {
 
@@ -29,13 +29,14 @@ function AddNewUser() {
           if(response.status==200){
             console.log('Data saved success...'+values.description);
             setMessage('Data saved success...:'+values.description);
+            resetForm({values: ''});
           }
         })
         .catch((error) => {
           console.log(error);
           console.log('url not found');
           setMessage('fail to save saved.');
-          resetForm({values: ''});
+          
         });
 
   };
@@ -64,7 +65,7 @@ function AddNewUser() {
   });
 
     return (
-        <div className="container col-sm-8 mt-4">
+      <div className="container col-sm-8 mt-4">
           <h4 className="mb-4">Add/Edit Task</h4>
           <form onSubmit={formik.handleSubmit}>
 
@@ -100,8 +101,13 @@ function AddNewUser() {
           Submit
         </button>
       </form>
-      {message? <div className='alert alert-primary'>{message}</div>:null}
-        </div>
+        {message? 
+          <div className='alert alert-primary'>
+            {message} -click heat to see all task <Link to="/TaskList" >All Task</Link >
+          </div>
+          :null
+        }
+      </div>
       );
     }
 

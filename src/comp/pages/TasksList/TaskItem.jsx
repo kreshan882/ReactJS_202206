@@ -1,7 +1,7 @@
 import React from 'react';
 
 function TaskItem(props) {
-  const borderColor = props.taskInfo.status === 'New' ? 'border-primary' : '';
+  const borderColor = props.taskInfo.status === 'Completed' ? 'border-primary' : '';
   return (
     <div className={'card m-1 col-3 p-0 border ' + borderColor}>
       <div className="card-body">
@@ -15,12 +15,9 @@ function TaskItem(props) {
         </div>
 
         <p className="card-text">{props.taskInfo.description}</p>
-        <a href="/" className="btn btn-success card-link">
-          Complete
-        </a>
-        <a href="/" className="btn btn-danger card-link">
-          Delete
-        </a>
+        <button className="btn btn-success btn-sm mr-2" onClick={() => props.onComplete(props.taskInfo.id)}>Complete</button>
+        <button className="btn btn-danger btn-sm mr-2"  onClick={() => props.onDelete(props.taskInfo.id)}>Delete</button>
+        <button className="btn btn-edit btn-sm" >edit</button>
       </div>
     </div>
   );

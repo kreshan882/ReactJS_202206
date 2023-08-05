@@ -166,7 +166,10 @@ https://www.youtube.com/watch?v=FbxE0Qw2500&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljT
 			npm i axios  (call fire base database)
 			npm i uuid   (unic id generation
 			
-	11.4) fireBase data list View [Video time: 1.01 - 1.01....] 
+	11.4) fireBase data list View [Video time: 1.01 - 1.27....] 
+			get list   ----> axios.get(apiUrl)
+			completed  ----> axios.patch(apiUrl, {status:"Completed"})
+			delete     ----> axios.delete(apiUrl)
 			
 			
 			
