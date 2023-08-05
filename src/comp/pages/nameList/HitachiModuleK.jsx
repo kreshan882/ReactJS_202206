@@ -29,7 +29,7 @@ function HitachiModuleK() {
         return (
           <HitachiModuleKItems 
                     key={aName.Id} 
-                    name={aName.name.first} 
+                    name={`mr. ${aName.name.first} ` } 
                     city={aName.location.city} 
                     img={aName.picture.medium} 
                     dob={aName.dob}
@@ -54,9 +54,13 @@ function HitachiModuleK() {
     };
 
 
+    //inisilize or modifi  useState called this function
     useEffect(() => {
       console.log('render method call all time refresh & buttonclick');
-      fetch('https://randomuser.me/api').then((response) => {
+	  
+	  //get data from web
+      fetch('https://randomuser.me/api')
+	  .then((response) => {
         return response.json();
       })
       .then((responseData) => {
@@ -64,7 +68,8 @@ function HitachiModuleK() {
         //setNameList([responseData.results[0]]);
         setNameList(nameList => nameList.concat([responseData.results[0]]));
       });
-    }, [loadData]);
+    }, [loadData]);  // 2nd paramenter load data using to stop loop, if call 2nd param only useEffect will call
+
 
 
 

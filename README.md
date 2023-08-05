@@ -3,11 +3,32 @@ React GUID TO RUN
 =========================================================================================	
 https://www.youtube.com/watch?v=7va799ctfWQ&list=PLvvtf05eMZ2DpDyWwmAjEuicvVxx4vIYB
 
-1) setup
-		Node-JS | visualStudio CODE
-		ES7 install--> react/redux/react-native/ js Snippets
-		Meteriakl icon Theam - make buaty
-		Prettier - code syndex
+*****[Single page Application: when click button , not recomendet to refresh and load]  ******
+1.1) setup
+		Instaill Node-JS 
+		install visualStudio CODE
+			install below market plave from VS Code
+				ES7 install--> react/redux/react-native/ js Snippets
+				Meteriakl icon Theam - make buaty
+				Prettier - code syndex
+				Bracket Pair Color DLW --> bracket showing correctly
+				
+1.2) Run the project[powerShell]
+		1.2.1) npx create-react-app project  (only when create project,get the pacjage.json file libery and update the versions )
+				1) npm install --save react-router-dom formik moment axios
+				
+		cd ReactJS_202206
+		npm install   (install package_lock.json+ node_modules)
+		npm start
+		http://localhost:3000/  
+
+
+		issue : no such file or directory, lstat 'C:\Users\KRESHAN88\AppData\Roaming\npm'
+			npm cache clean --force 
+			npm i 
+			npm i -g create-react-app 
+			
+			
 2) folder structure
 		node-modules/*   ( npm install) load this dependency
 		public/*
@@ -18,41 +39,61 @@ https://www.youtube.com/watch?v=7va799ctfWQ&list=PLvvtf05eMZ2DpDyWwmAjEuicvVxx4v
 			2) App.js
 				
 3) react component
-     index.js-> app.js -> HitachiModuleK.jsx -> HitachiModuleKItems.jsx (can reuse this module)
+	 3.1) React.createElement('h1','headder, React.createElement('h1','headder, ))  --> rendering to single page function
 	 
-4) PROPS -> reuse component with dynamic change value (element pass)
-		Add chrome extenction: React Developer Tools  [ DeveloperTool-> component]
+	 3.2) simple jsx home page 
+		 nameList|  nameListItem (functional component add)
+	 
+4) dynamicaly change functionaly component
+		4.1) [React developot tool chrome]  --> extenction add [Settings-> moreTools-> developer tools===>Component]
+		4.2) console |select Component
+			[hirachi can see==> APP-> NameList-> NameListItem]
+			NameListItem (probs: can see some values)
+			
+			NameList ==> </nameListItem name="sss" course"ddd">
+			nameListItem ==> {prob.name} 
+
 		
-5) List showing  
-		5.1) (https://randomuser.me/) - random user detail from web
-		5.2) npm install moment - date format libeary
-		5.3) looping responce array (show user list) , with unic KEY (view user)
+5) name list pass by array (dinamacily pass valur using json)  
+		java script array map===>
+			const arr1=[1,3,4,6];
+			const map= arr1.map(x=>x*2)
+			console.log(map)---> 2,6,8,12
 		
-6) Styling component (css)
-		6.1) import css file style (use xxx.css) <p className='redText'>
-		6.2) inline style  <p style={{color: 'green'}} >
-		6.3) bootstrap     ==> add bootstrape lib to [index.html] (root file)  [https://getbootstrap.com/docs/5.2/components/dropdowns/]
-				- headder + moduleK + module items design
-		6.4) bootstrap react (meterial-ui) component
+6) using bootstrap design GUI [React bootstap -> css design]
+		6.1) Meterial bootstrap==> https://mui.com/material-ui/react-button/   (same like angulur design)
 		
-7) React Hooks 
+		6.2) BootStrape===>https://getbootstrap.com/docs/5.3/getting-started/introduction/     
+				-->interduction -> css +js  (index.html	---> add css & java script)
+				-->cpmponent-> navbar|listgroup
+				-->layout grid(12-2+10)  |utilitu (boder)
+		
+7) React Hooks, pass value using json (functional component) ReactHooks===>  {useState| useEffect}
+		---> load data without browser refresh
+			 hook/State/nameList ===> aName -> HitachiModuleKItems
+			 useState ---> function load data to array list
+			 
 		import React,{useState} from 'react' 
-		react hook= without component refresh(browser refresh=rerunder brouser) , only state updated (when add button)
 		setNameList(nameList => nameList.concat(newUser));  -----> add newUser to nameList
 		
-8) react Hooks
-		import React,{useState, useEffect} from 'react';
-		https://randomuser.me/api   ==> user view from url ,when button click
-		useEffect --> loading when refresh page 
+8) ReactHooks===>  {useEffect}
+    data get from web url 
+	useEffect---> triger component load time| component update time(useState update time)
+	              2nd parameter using to stop loop, 2nd param useState when modified only calll useEfect
+	
+	fetch('https://randomuser.me/api')
+	.then((response) => {   //   (=>) call back function
+        return response.json();
+    })
 		
-9) Routing
-		- single page routing ( can not refresh page -> need to replace data and show)  Good: https://reactrouter.com/docs/en/v6/getting-started/tutorial
-		Header Bar =>>> [Home | Abour | ShowUserLiust] [routing Add]
-		
-		npm install react-router-dom@6
-		import { BrowserRouter,Routes, Route } from "react-router-dom";
-		import { Link } from "react-router-dom";
-		
+9) Routing 
+	HeaderBar.jsx -->bootstap design
+	npm install react-router-dom
+	import { BrowserRouter,Routes, Route } from "react-router-dom";   ---> APP
+	import { link } from "react-router-dom";                          ---> HeaderBar
+
+
+10)		
 		
 ==============================================================================================
 git 
@@ -69,7 +110,7 @@ Creact repository get url{https://github.com/kreshan882/ReactJS_2022.git}
 	git config --global user.email "kreshan882@gmail.com"
 	cd ReactJS_2022/
 	git init
-	git add src/* (git add --all)
+	git add package.json src/* public/* README.md     (git add --all)
 	git status  ==> check status 
 	git commit -m "commit fst"
 	git log
