@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import axios from 'axios';
+import {v4 as uuid4} from 'uuid';
 
 
 function AddNewUser() {
@@ -15,22 +16,27 @@ function AddNewUser() {
 
   const onSubmit= (values,{resetForm}) => {
     console.log(values);
-    console.log(values.title);
+    const taskId=uuid4();
+    //const task ={ id: '4',title: values.title ,description:values.description,dueDate:dueDate.description };
+    const apiUrl=`https://reacttaskmanagerk-default-rtdb.asia-southeast1.firebasedatabase.app/TasksTable/${taskId}.json`;
+    const task = { ...values, id: taskId, status: 'New',createdDate: new Date() };
+    console.log(task);
     
-    const apiUrl="https//addUser/restApi";
-    const task ={id: '4',title: values.title ,description:values.description };
-    axios.post(apiUrl,task)
-    .then((response) => {
-        if(response.status==200){
-
-        }
-    })
-    .catch((error) => {
-      console.log(error);
-      console.log('url not found');
-      setMessage('successfully saved: '+values.title);
-      resetForm({values: ''});
-    });
+    
+    
+    axios.put(apiUrl,task)
+        .then((response) => {
+          if(response.status==200){
+            console.log('Data saved success...'+values.description);
+            setMessage('Data saved success...:'+values.description);
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          console.log('url not found');
+          setMessage('fail to save saved.');
+          resetForm({values: ''});
+        });
 
   };
 
@@ -43,7 +49,10 @@ function AddNewUser() {
         errors.description='please add description';
       }
       if(!values.dueDate) {
-        errors.dueDate='please add dueDate';
+        errors.dueDate='please add dueDate number';
+      }else if(!/^\d{1,2}\-\d{1,2}\-\d{2,4}$/.test(values.dueDate) ){ 
+      //}else if(!/^\d{1,2}$/.test(values.dueDate) ){
+        errors.dueDate='please select dueDate DD-MM-YYYY';
       }
     return errors;
   };
@@ -58,13 +67,14 @@ function AddNewUser() {
         <div className="container col-sm-8 mt-4">
           <h4 className="mb-4">Add/Edit Task</h4>
           <form onSubmit={formik.handleSubmit}>
-        
+
         <div className="form-group">
           <label for="title">Title</label>
           <input type="text" className="form-control"  id="title"  aria-describedby="emailHelp"  
-            onChange={formik.handleChange} 
-            value={formik.values.title} 
-            onBlur={formik.handleBlur}/>
+            onChange={formik.handleChange} /* Allow to Type*/
+            value={formik.values.title}     /*pass the value when submit*/
+            onBlur={formik.handleBlur}      /*validate for (on Blur +touched) values */
+            />    
           {formik.touched.title && formik.errors.title? <div className="text-danger">{formik.errors.title}</div>: null}
         </div>
         
@@ -78,7 +88,7 @@ function AddNewUser() {
         </div>
        
         <div className="form-group">
-          <label for="dueDate">Due Date</label>
+          <label for="dueDate">Due Date count</label>
           <input type="text" className="form-control" id="dueDate"  aria-describedby="emailHelp" 
             onChange={formik.handleChange} 
             value={formik.values.dueDate} 

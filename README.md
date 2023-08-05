@@ -130,7 +130,7 @@ https://www.youtube.com/watch?v=FbxE0Qw2500&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljT
 	11.1) ====> FireBaseDatabase Google [Video time: 0.13] 
 		** after Db created automaticaly rest web service given
 		https://console.firebase.google.com/?pli=1
-		 11.1.1) Create Project : ReactTaskManagerK-->create success->
+		 11.1.1) Create Project : ReactTaskManagerK-->create success-> [Expire date:2023-9-4]
 		 11.1.2) Build-> ReyalTime Databse-> Create Databse-> Start Test Mode| enable-> ->Publish
 					"rules": {
 						".read": true,  // 2023-9-4
@@ -152,9 +152,23 @@ https://www.youtube.com/watch?v=FbxE0Qw2500&list=PLvvtf05eMZ2DB55uevFM4rt6oiDljT
 				11.1.4.2) DELETE|GET -->delete|get data from the table using POSTMAN
 						https://reacttaskmanagerk-default-rtdb.asia-southeast1.firebasedatabase.app/tasksTable/(12345gygyu_generated_id).json
 						
-	11.2) React Js useFormik (all form validation and submition) [Video time: 0.22 - 0.34....] 
+	11.2) React Js useFormik (all form validation and submition) [Video time: 0.22 - 0.47....] 
 			npm i formik
 			https://formik.org/docs/overview
+			
+			  const formik = useFormik({
+				  initialValues,
+				  onSubmit,
+				  validate,
+			  });
+			  
+	11.3) submit form value to firebase [Video time: 0.47 - 1.01....] 
+			npm i axios  (call fire base database)
+			npm i uuid   (unic id generation
+			
+	11.4) fireBase data list View [Video time: 1.01 - 1.01....] 
+			
+			
 			
  
 ==============================================================================================
